@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">배민 클론</string>
+    <string name="delivery">배달</string>
+    <string name="packing">포장</string>
+    <string name="shopping_live">쇼핑리이브</string>
+    <string name="give_gift">선물하기</string>
+    <string name="national_delicacy">전국 별미</string>
+    <string name="point">포인트</string>
+    <string name="coupon_box">쿠폰함</string>
+    <string name="gift_box">선물함</string>
+    <string name="recently_ordered">최근에 주문했어요</string>
+    <string name="view_order_history"><![CDATA[주문 내역 보기 >]]></string>
+    <string name="all_services">서비스 전체보기</string>
+    <string name="bm_shopping_live"><font color='#27C0BB'>배민</font> <font color='#1E1E1E'>쇼핑라이브</font></string>
+    <string name="bm_give_gift"><font color='#27C0BB'>배민</font> <font color='#1E1E1E'>선물하기</font></string>
+    <string name="bm_national_delicacy"><font color='#27C0BB'>배민</font> <font color='#1E1E1E'>전국별미</font></string>
+    <string name="now_special_price">지금 특가중</string>
+    <string name="live_calendar">라이브 캘린더</string>
+    <string name="regional_delicacies">지역별 별미를 맛보세요</string>
+    <string name="one_person">1인분</string>
+    <string name="korean_food">한식</string>
+    <string name="snack_bar">분식</string>
+    <string name="caffe_dessert">카페·디저트</string>
+    <string name="japanese_food">돈까스·회·일식</string>
+    <string name="chicken">치킨</string>
+    <string name="pizza">피자</string>
+    <string name="western_food">아시안·양식</string>
+    <string name="chinese_food">중국집</string>
+    <string name="pork_feet">족발·보쌈</string>
+    <string name="midnight_snack">야식</string>
+    <string name="steamed">찜·탕</string>
+    <string name="lunch">도시락</string>
+    <string name="fast_food">패스트푸드</string>
+    <string name="brand">브랜드관</string>
+    <string name="ranking">맛집랭킹</string>
+    <string name="neighborhood_delivery">우리동네 빠른 배달</string>
+</resources>
