@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BaeminClone">
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".StoreDetailActivity"></activity>
+        <activity android:name=".SelectStoreActivity" />
+        <activity android:name=".MenuActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".IntroActivity">
             <intent-filter>

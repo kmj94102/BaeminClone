@@ -34,4 +34,5 @@
     <string name="brand">브랜드관</string>
     <string name="ranking">맛집랭킹</string>
     <string name="neighborhood_delivery">우리동네 빠른 배달</string>
+    <string name="share">공유</string>
 </resources>
