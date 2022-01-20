@@ -18,7 +18,9 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#F6F6F6"
+            android:paddingBottom="30dp">
 
             <!-- 검색 영역 -->
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,19 +55,24 @@
 
             <!-- 배달 카드 -->
             <com.google.android.material.card.MaterialCardView
+                style="?attr/materialCardViewElevatedStyle"
                 android:id="@+id/cardDelivery"
                 android:layout_width="0dp"
                 android:layout_height="170dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                app:cardCornerRadius="10dp"
-                app:strokeColor="@color/gray_card_stroke"
-                app:strokeWidth="1dp"
-                app:cardBackgroundColor="@color/gray_card"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="11dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="3dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/cardPacking"
+                app:layout_constraintEnd_toStartOf="@id/cardBaeMin"
                 app:layout_constraintTop_toBottomOf="@id/layoutTopSearch">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/delivery"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -73,24 +80,34 @@
                     android:text="@string/delivery"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/bm_dohyeon"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="15dp"/>
+                    android:textSize="24sp"
+                    android:fontFamily="@font/bm_hanna"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginStart="12dp"
+                    android:text="세상은 넓고\n맛집은 많다"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bm_hanna_air"
+                    android:lineSpacingExtra="2dp"/>
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- 포장 카드 -->
+            <!-- 배민1 카드 -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardPacking"
+                style="?attr/materialCardViewElevatedStyle"
+                android:id="@+id/cardBaeMin"
                 android:layout_width="0dp"
                 android:layout_height="170dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                app:cardCornerRadius="10dp"
-                app:strokeColor="@color/gray_card_stroke"
-                app:strokeWidth="1dp"
-                app:cardBackgroundColor="@color/gray_card"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="14dp"
+                app:cardCornerRadius="11dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="3dp"
                 app:layout_constraintStart_toEndOf="@id/cardDelivery"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layoutTopSearch">
@@ -98,108 +115,195 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/packing"
+                    android:text="@string/baemin"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/bm_dohyeon"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="15dp"/>
+                    android:textSize="24sp"
+                    android:fontFamily="@font/bm_hanna"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginStart="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="44dp"
+                    android:layout_marginStart="12dp"
+                    android:text="한 번에 한 집만\n빠르게 배달해요!"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bm_hanna_air"
+                    android:lineSpacingExtra="2dp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- 포장 카드 -->
+            <com.google.android.material.card.MaterialCardView
+                style="?attr/materialCardViewElevatedStyle"
+                android:id="@+id/cardPacking"
+                android:layout_width="0dp"
+                android:layout_height="71dp"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="11dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toBottomOf="@id/cardDelivery"
+                app:layout_constraintStart_toStartOf="@id/cardDelivery"
+                app:layout_constraintEnd_toEndOf="@id/cardBaeMin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/delivery"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:fontFamily="@font/bm_hanna"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="12dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="44dp"
+                        android:layout_marginStart="12dp"
+                        android:text="가까운 가게는 직접 가지러 가지요"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/bm_hanna_air"
+                        android:lineSpacingExtra="2dp"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="60dp"
+                        android:layout_marginEnd="7dp"
+                        android:src="@drawable/packaging"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </com.google.android.material.card.MaterialCardView>
 
             <!-- 쇼핑라이브 카드 -->
             <com.google.android.material.card.MaterialCardView
+                style="?attr/materialCardViewElevatedStyle"
                 android:id="@+id/cardShoppingLive"
                 android:layout_width="0dp"
-                android:layout_height="70dp"
+                android:layout_height="67dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp"
-                app:strokeColor="@color/gray_card_stroke"
-                app:strokeWidth="1dp"
-                app:cardBackgroundColor="@color/gray_card"
-                app:layout_constraintTop_toBottomOf="@id/cardDelivery"
+                app:cardCornerRadius="11dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toBottomOf="@id/cardPacking"
                 app:layout_constraintStart_toStartOf="@id/cardDelivery"
-                app:layout_constraintEnd_toEndOf="@id/cardPacking">
+                app:layout_constraintEnd_toStartOf="@id/cardGiveAGift">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/live"
+                    android:layout_gravity="center_horizontal"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/shopping_live"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="8dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/bm_dohyeon"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="15dp"/>
+                    android:fontFamily="@font/bm_dohyeon"/>
 
             </com.google.android.material.card.MaterialCardView>
 
             <!-- 선물하기 카드 -->
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardGiveGift"
+                style="?attr/materialCardViewElevatedStyle"
+                android:id="@+id/cardGiveAGift"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                app:cardCornerRadius="10dp"
-                app:strokeColor="@color/gray_card_stroke"
-                app:strokeWidth="1dp"
-                app:cardBackgroundColor="@color/gray_card"
-                app:layout_constraintTop_toBottomOf="@id/cardShoppingLive"
-                app:layout_constraintStart_toStartOf="@id/cardDelivery"
+                android:layout_height="67dp"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="11dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toTopOf="@id/cardShoppingLive"
+                app:layout_constraintStart_toEndOf="@id/cardShoppingLive"
                 app:layout_constraintEnd_toStartOf="@id/cardNationalDelicacy">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/gift"
+                    android:layout_gravity="center_horizontal"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/give_gift"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="8dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/bm_dohyeon"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="15dp"/>
+                    android:fontFamily="@font/bm_dohyeon"/>
 
             </com.google.android.material.card.MaterialCardView>
 
             <!-- 전국 별미 카드 -->
             <com.google.android.material.card.MaterialCardView
+                style="?attr/materialCardViewElevatedStyle"
                 android:id="@+id/cardNationalDelicacy"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
-                app:cardCornerRadius="10dp"
-                app:strokeColor="@color/gray_card_stroke"
-                app:strokeWidth="1dp"
-                app:cardBackgroundColor="@color/gray_card"
-                app:layout_constraintTop_toTopOf="@id/cardGiveGift"
-                app:layout_constraintStart_toEndOf="@id/cardGiveGift"
-                app:layout_constraintEnd_toEndOf="@id/cardPacking">
+                android:layout_height="67dp"
+                app:cardCornerRadius="11dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toTopOf="@id/cardShoppingLive"
+                app:layout_constraintStart_toEndOf="@id/cardGiveAGift"
+                app:layout_constraintEnd_toEndOf="@id/cardBaeMin">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/national_delicacy"
+                    android:layout_gravity="center_horizontal"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/national_delicacy"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="8dp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:fontFamily="@font/bm_dohyeon"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginStart="15dp"/>
+                    android:fontFamily="@font/bm_dohyeon"/>
 
             </com.google.android.material.card.MaterialCardView>
 
             <!-- 광고 카드-->
             <com.google.android.material.card.MaterialCardView
+                style="?attr/materialCardViewElevatedStyle"
                 android:id="@+id/cardAdvertisement"
                 android:layout_width="0dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="20dp"
-                app:cardCornerRadius="10dp"
-                app:cardBackgroundColor="@color/main_color"
-                app:layout_constraintTop_toBottomOf="@id/cardGiveGift"
+                app:cardCornerRadius="11dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="3dp"
+                app:layout_constraintTop_toBottomOf="@id/cardGiveAGift"
                 app:layout_constraintStart_toStartOf="@id/cardDelivery"
-                app:layout_constraintEnd_toEndOf="@id/cardPacking">
+                app:layout_constraintEnd_toEndOf="@id/cardBaeMin">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -214,268 +318,81 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- 포인트 -->
+            <!-- 오늘의 할인 -->
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutPoint"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="25dp"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toBottomOf="@id/cardAdvertisement"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <View
-                    android:id="@+id/viewPoint"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/ic_point"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:text="@string/point"
-                    android:layout_gravity="center"
-                    android:includeFontPadding="false"
-                    android:lineSpacingExtra="0dp"
-                    app:layout_constraintStart_toEndOf="@id/viewPoint"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/verticalContour1"
-                android:layout_width="2dp"
-                android:layout_height="0dp"
-                android:background="@color/gray_card_stroke"
-                android:layout_marginVertical="5dp"
-                app:layout_constraintStart_toEndOf="@id/layoutPoint"
-                app:layout_constraintEnd_toStartOf="@id/layoutCouponBox"
-                app:layout_constraintTop_toTopOf="@id/layoutPoint"
-                app:layout_constraintBottom_toBottomOf="@id/layoutPoint"/>
-
-            <!-- 쿠폰함 -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutCouponBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toTopOf="@id/layoutPoint"
-                app:layout_constraintStart_toEndOf="@id/verticalContour1"
-                app:layout_constraintEnd_toStartOf="@id/verticalContour2">
-
-                <View
-                    android:id="@+id/viewCouponBox"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/ic_coupon"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:text="@string/coupon_box"
-                    android:layout_gravity="center"
-                    android:includeFontPadding="false"
-                    android:lineSpacingExtra="0dp"
-                    app:layout_constraintStart_toEndOf="@id/viewCouponBox"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/verticalContour2"
-                android:layout_width="2dp"
-                android:layout_height="0dp"
-                android:background="@color/gray_card_stroke"
-                android:layout_marginVertical="5dp"
-                app:layout_constraintStart_toEndOf="@id/layoutCouponBox"
-                app:layout_constraintEnd_toStartOf="@id/layoutGiftBox"
-                app:layout_constraintTop_toTopOf="@id/layoutPoint"
-                app:layout_constraintBottom_toBottomOf="@id/layoutPoint"/>
-
-            <!-- 선물함 -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutGiftBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toTopOf="@id/layoutPoint"
-                app:layout_constraintStart_toEndOf="@id/verticalContour2"
-                app:layout_constraintEnd_toStartOf="@id/verticalContour3">
-
-                <View
-                    android:id="@+id/viewGiftBox"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/ic_gift"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:text="@string/gift_box"
-                    android:layout_gravity="center"
-                    android:includeFontPadding="false"
-                    android:lineSpacingExtra="0dp"
-                    app:layout_constraintStart_toEndOf="@id/viewGiftBox"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:id="@+id/verticalContour3"
-                android:layout_width="2dp"
-                android:layout_height="0dp"
-                android:background="@color/gray_card_stroke"
-                android:layout_marginVertical="5dp"
-                app:layout_constraintStart_toEndOf="@id/layoutGiftBox"
-                app:layout_constraintEnd_toStartOf="@id/layoutFavorite"
-                app:layout_constraintTop_toTopOf="@id/layoutPoint"
-                app:layout_constraintBottom_toBottomOf="@id/layoutPoint"/>
-
-            <!-- 찜 -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutFavorite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="30dp"
-                android:orientation="horizontal"
-                app:layout_constraintTop_toTopOf="@id/layoutPoint"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <View
-                    android:id="@+id/viewFavorite"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/ic_favorite"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:text="@string/gift_box"
-                    android:layout_gravity="center"
-                    android:includeFontPadding="false"
-                    android:lineSpacingExtra="0dp"
-                    app:layout_constraintStart_toEndOf="@id/viewFavorite"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- 최근에 주문했어요 -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layoutRecentlyOrdered"
+                android:id="@+id/layoutToDayDiscount"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                app:layout_constraintTop_toBottomOf="@id/layoutPoint"
+                android:layout_marginTop="22dp"
+                android:background="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/cardAdvertisement"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent">
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:background="@color/gray_card_stroke"
-                    app:layout_constraintBottom_toTopOf="@id/horizontalContour"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-                <View
-                    android:id="@+id/horizontalContour"
-                    android:layout_width="0dp"
-                    android:layout_height="6dp"
-                    android:background="@color/gray_card"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
                 <TextView
-                    android:id="@+id/txtRecentlyOrdered"
+                    android:id="@+id/labelDiscount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_marginStart="20dp"
-                    android:text="@string/recently_ordered"
-                    android:textSize="16sp"
+                    android:layout_marginStart="12dp"
+                    android:text="오늘의 할인"
                     android:textColor="@color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/horizontalContour"/>
+                    android:textSize="18sp"
+                    android:fontFamily="@font/bm_hanna_air"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/discount"
+                    app:layout_constraintTop_toTopOf="@id/labelDiscount"
+                    app:layout_constraintBottom_toBottomOf="@id/labelDiscount"
+                    app:layout_constraintStart_toEndOf="@id/labelDiscount"/>
 
                 <TextView
-                    android:id="@+id/txtOrderHistory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/view_order_history"
-                    android:textSize="12sp"
-                    app:layout_constraintTop_toTopOf="@id/txtRecentlyOrdered"
-                    app:layout_constraintBottom_toBottomOf="@id/txtRecentlyOrdered"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="전체 보기 >"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/bm_hanna_air"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvRecentlyOrdered"
-                    android:layout_width="0dp"
-                    android:layout_height="170dp"
+                
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card1"
+                    android:layout_width="236dp"
+                    android:layout_height="134dp"
                     android:layout_marginTop="10dp"
-                    android:clipToPadding="false"
-                    android:paddingHorizontal="20dp"
-                    android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintTop_toBottomOf="@id/txtRecentlyOrdered"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    android:layout_marginBottom="29dp"
+                    app:strokeColor="#D7D7D7"
+                    app:cardBackgroundColor="#FEFBEA"
+                    app:layout_constraintTop_toBottomOf="@id/labelDiscount"
+                    app:layout_constraintStart_toStartOf="@id/labelDiscount"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="236dp"
+                    android:layout_height="134dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="29dp"
+                    app:strokeColor="#D7D7D7"
+                    app:cardBackgroundColor="#FEF4EB"
+                    app:layout_constraintTop_toBottomOf="@id/labelDiscount"
+                    app:layout_constraintStart_toEndOf="@id/card1"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="@color/gray_card_stroke"
-                app:layout_constraintBottom_toTopOf="@id/horizontalContour2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-            <View
-                android:id="@+id/horizontalContour2"
-                android:layout_width="0dp"
-                android:layout_height="6dp"
-                android:layout_marginTop="25dp"
-                android:background="@color/gray_card"
-                app:layout_constraintTop_toBottomOf="@id/layoutRecentlyOrdered"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@color/gray_card"
-                android:padding="20dp"
-                android:text="이용약관\n배달의민족은 통신판매중개자이며 통신팬매의 당사자가 아닙니다. 따라서 배달의 민족은 상품·거래 정보 및 거래에 책임을 지지 않습니다."
-                android:textSize="12sp"
-                app:layout_constraintTop_toBottomOf="@id/horizontalContour2"
+                android:background="#E9E9E9"
+                app:layout_constraintTop_toBottomOf="@id/layoutToDayDiscount"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -543,6 +460,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

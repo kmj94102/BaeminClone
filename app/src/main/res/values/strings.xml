@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">배민 클론</string>
     <string name="delivery">배달</string>
+    <string name="baemin">배민</string>
     <string name="packing">포장</string>
     <string name="shopping_live">쇼핑리이브</string>
     <string name="give_gift">선물하기</string>
