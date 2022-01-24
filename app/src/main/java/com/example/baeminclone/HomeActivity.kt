@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.baeminclone.databinding.ActivityHomeBinding
 import com.example.baeminclone.test.TestActivity
+import com.example.baeminclone.ui.maim.MainActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -17,7 +18,10 @@ class HomeActivity : AppCompatActivity() {
         binding.btnMenu.setOnClickListener {
             startActivity(Intent(this, MenuActivity::class.java))
         }
-        startActivity(Intent(this, TestActivity::class.java))
+
+        binding.cardDelivery.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
 
     }
 }

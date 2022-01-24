@@ -14,4 +14,10 @@
         <item name="fontFamily">@font/bm_hanna</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="TopTabLayout" parent="Widget.Material3.TabLayout">
+        <item name="fontFamily">@font/bm_hanna_air</item>
+        <item name="tabTextColor">@color/font_gray</item>
+        <item name="tabSelectedTextColor">@color/white</item>
+    </style>
 </resources>

@@ -1,584 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <View
-                android:id="@+id/viewAdvertisement"
-                android:layout_width="0dp"
-                android:layout_height="120dp"
-                android:background="@color/main_color"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <!-- 1행 -->
-            <!-- 1인분 -->
-            <LinearLayout
-                android:id="@+id/layoutOnePerson"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutKoreanFood"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/viewAdvertisement">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/one_person"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 한식 -->
-            <LinearLayout
-                android:id="@+id/layoutKoreanFood"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutSnackBar"
-                app:layout_constraintStart_toEndOf="@id/layoutOnePerson"
-                app:layout_constraintTop_toTopOf="@id/layoutOnePerson">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/korean_food"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 분식 -->
-            <LinearLayout
-                android:id="@+id/layoutSnackBar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutCaffeDessert"
-                app:layout_constraintStart_toEndOf="@id/layoutKoreanFood"
-                app:layout_constraintTop_toTopOf="@id/layoutOnePerson">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/snack_bar"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 카페 디저트 -->
-            <LinearLayout
-                android:id="@+id/layoutCaffeDessert"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutJapaneseFood"
-                app:layout_constraintStart_toEndOf="@id/layoutSnackBar"
-                app:layout_constraintTop_toTopOf="@id/layoutOnePerson">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/caffe_dessert"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 돈까스 회 일식 -->
-            <LinearLayout
-                android:id="@+id/layoutJapaneseFood"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="25dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/layoutCaffeDessert"
-                app:layout_constraintTop_toTopOf="@id/layoutOnePerson">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/japanese_food"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <!-- 2행 -->
-            <!-- 치킨 -->
-            <LinearLayout
-                android:id="@+id/layoutChicken"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutPizza"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layoutOnePerson">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/chicken"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 피자 -->
-            <LinearLayout
-                android:id="@+id/layoutPizza"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutWesternFood"
-                app:layout_constraintStart_toEndOf="@id/layoutChicken"
-                app:layout_constraintTop_toTopOf="@id/layoutChicken">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/pizza"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 아시안 양식 -->
-            <LinearLayout
-                android:id="@+id/layoutWesternFood"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutChineseFood"
-                app:layout_constraintStart_toEndOf="@id/layoutPizza"
-                app:layout_constraintTop_toTopOf="@id/layoutChicken">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/western_food"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 중국집 -->
-            <LinearLayout
-                android:id="@+id/layoutChineseFood"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutPorkFeet"
-                app:layout_constraintStart_toEndOf="@id/layoutWesternFood"
-                app:layout_constraintTop_toTopOf="@id/layoutChicken">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/chinese_food"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 족발 보쌈 -->
-            <LinearLayout
-                android:id="@+id/layoutPorkFeet"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="25dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/layoutChineseFood"
-                app:layout_constraintTop_toTopOf="@id/layoutChicken">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/pork_feet"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <!-- 3행 -->
-            <!-- 야식 -->
-            <LinearLayout
-                android:id="@+id/layoutMidnightSnack"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutSteamed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layoutChicken">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/midnight_snack"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 찜탕 -->
-            <LinearLayout
-                android:id="@+id/layoutSteamed"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutLunch"
-                app:layout_constraintStart_toEndOf="@id/layoutMidnightSnack"
-                app:layout_constraintTop_toTopOf="@id/layoutMidnightSnack">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/steamed"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 도시락 -->
-            <LinearLayout
-                android:id="@+id/layoutLunch"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutFastFood"
-                app:layout_constraintStart_toEndOf="@id/layoutSteamed"
-                app:layout_constraintTop_toTopOf="@id/layoutMidnightSnack">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/lunch"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 패스트푸드 -->
-            <LinearLayout
-                android:id="@+id/layoutFastFood"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutBrand"
-                app:layout_constraintStart_toEndOf="@id/layoutLunch"
-                app:layout_constraintTop_toTopOf="@id/layoutMidnightSnack">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/fast_food"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-            <!-- 브랜드관 -->
-            <LinearLayout
-                android:id="@+id/layoutBrand"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="25dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/layoutFastFood"
-                app:layout_constraintTop_toTopOf="@id/layoutMidnightSnack">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/brand"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-
-            <!-- 4행 -->
-            <!-- 맛집랭킹 -->
-            <LinearLayout
-                android:id="@+id/layoutRanking"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@id/layoutSteamed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/layoutMidnightSnack">
-
-                <View
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/ic_temp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="@string/ranking"
-                    android:textColor="@color/black"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="@id/layoutRanking"
-                app:layout_constraintBottom_toBottomOf="@id/layoutRanking"
-                app:layout_constraintStart_toStartOf="@id/layoutSteamed"
-                app:layout_constraintEnd_toEndOf="@id/layoutSteamed">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <View
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/ic_arrow_drop_down"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:id="@+id/viewAdvertisement"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:background="@color/main_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="264dp"
+                    android:src="@drawable/img_delivery_list"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toBottomOf="@id/viewAdvertisement"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <!-- 1행 -->
+                <!-- 1인분 -->
+                <LinearLayout
+                    android:id="@+id/layoutOnePerson"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutKoreanFood"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewAdvertisement"/>
+                <!-- 한식 -->
+                <LinearLayout
+                    android:id="@+id/layoutKoreanFood"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutSnackBar"
+                    app:layout_constraintStart_toEndOf="@id/layoutOnePerson"
+                    app:layout_constraintTop_toTopOf="@id/layoutOnePerson"/>
+                <!-- 분식 -->
+                <LinearLayout
+                    android:id="@+id/layoutSnackBar"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutCaffeDessert"
+                    app:layout_constraintStart_toEndOf="@id/layoutKoreanFood"
+                    app:layout_constraintTop_toTopOf="@id/layoutOnePerson"/>
+                <!-- 카페 디저트 -->
+                <LinearLayout
+                    android:id="@+id/layoutCaffeDessert"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutJapaneseFood"
+                    app:layout_constraintStart_toEndOf="@id/layoutSnackBar"
+                    app:layout_constraintTop_toTopOf="@id/layoutOnePerson"/>
+                <!-- 돈까스 회 일식 -->
+                <LinearLayout
+                    android:id="@+id/layoutJapaneseFood"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layoutCaffeDessert"
+                    app:layout_constraintTop_toTopOf="@id/layoutOnePerson"/>
+
+                <!-- 2행 -->
+                <!-- 치킨 -->
+                <LinearLayout
+                    android:id="@+id/layoutChicken"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutPizza"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutOnePerson"/>
+                <!-- 피자 -->
+                <LinearLayout
+                    android:id="@+id/layoutPizza"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutWesternFood"
+                    app:layout_constraintStart_toEndOf="@id/layoutChicken"
+                    app:layout_constraintTop_toTopOf="@id/layoutChicken"/>
+                <!-- 아시안 양식 -->
+                <LinearLayout
+                    android:id="@+id/layoutWesternFood"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutChineseFood"
+                    app:layout_constraintStart_toEndOf="@id/layoutPizza"
+                    app:layout_constraintTop_toTopOf="@id/layoutChicken"/>
+                <!-- 중국집 -->
+                <LinearLayout
+                    android:id="@+id/layoutChineseFood"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutPorkFeet"
+                    app:layout_constraintStart_toEndOf="@id/layoutWesternFood"
+                    app:layout_constraintTop_toTopOf="@id/layoutChicken"/>
+                <!-- 족발 보쌈 -->
+                <LinearLayout
+                    android:id="@+id/layoutPorkFeet"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layoutChineseFood"
+                    app:layout_constraintTop_toTopOf="@id/layoutChicken"/>
+
+                <!-- 3행 -->
+                <!-- 야식 -->
+                <LinearLayout
+                    android:id="@+id/layoutMidnightSnack"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutSteamed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutChicken"/>
+                <!-- 찜탕 -->
+                <LinearLayout
+                    android:id="@+id/layoutSteamed"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutLunch"
+                    app:layout_constraintStart_toEndOf="@id/layoutMidnightSnack"
+                    app:layout_constraintTop_toTopOf="@id/layoutMidnightSnack"/>
+                <!-- 도시락 -->
+                <LinearLayout
+                    android:id="@+id/layoutLunch"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutFastFood"
+                    app:layout_constraintStart_toEndOf="@id/layoutSteamed"
+                    app:layout_constraintTop_toTopOf="@id/layoutMidnightSnack"/>
+                <!-- 패스트푸드 -->
+                <LinearLayout
+                    android:id="@+id/layoutFastFood"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutBrand"
+                    app:layout_constraintStart_toEndOf="@id/layoutLunch"
+                    app:layout_constraintTop_toTopOf="@id/layoutMidnightSnack"/>
+                <!-- 브랜드관 -->
+                <LinearLayout
+                    android:id="@+id/layoutBrand"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/layoutFastFood"
+                    app:layout_constraintTop_toTopOf="@id/layoutMidnightSnack"/>
+
+
+                <!-- 4행 -->
+                <!-- 맛집랭킹 -->
+                <LinearLayout
+                    android:id="@+id/layoutRanking"
+                    android:layout_width="66dp"
+                    android:layout_height="61dp"
+                    android:layout_marginStart="20dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/layoutSteamed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/layoutMidnightSnack"/>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/gray_d7"
+                    app:layout_constraintBottom_toTopOf="@id/horizontalContour"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:id="@+id/horizontalContour"
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/gray_card"
+                    app:layout_constraintTop_toBottomOf="@id/layoutRanking"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                <TextView
+                    android:id="@+id/txtNeighborhoodDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/neighborhood_delivery"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/horizontalContour"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvNeighborhoodDelivery"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/txtNeighborhoodDelivery"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="@id/layoutRanking"
-                app:layout_constraintBottom_toBottomOf="@id/layoutRanking"
-                app:layout_constraintStart_toStartOf="@id/layoutLunch"
-                app:layout_constraintEnd_toEndOf="@id/layoutLunch">
+        </ScrollView>
 
-                <View
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/ic_arrow_drop_down"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="@id/layoutRanking"
-                app:layout_constraintBottom_toBottomOf="@id/layoutRanking"
-                app:layout_constraintStart_toStartOf="@id/layoutFastFood"
-                app:layout_constraintEnd_toEndOf="@id/layoutFastFood">
-
-                <View
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/ic_arrow_drop_down"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="@id/layoutRanking"
-                app:layout_constraintBottom_toBottomOf="@id/layoutRanking"
-                app:layout_constraintStart_toStartOf="@id/layoutBrand"
-                app:layout_constraintEnd_toEndOf="@id/layoutBrand">
-
-                <View
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:background="@drawable/ic_arrow_drop_down"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:background="@color/gray_card_stroke"
-                app:layout_constraintBottom_toTopOf="@id/horizontalContour"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-            <View
-                android:id="@+id/horizontalContour"
-                android:layout_width="0dp"
-                android:layout_height="6dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/gray_card"
-                app:layout_constraintTop_toBottomOf="@id/layoutRanking"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-
-            <TextView
-                android:id="@+id/txtNeighborhoodDelivery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="20dp"
-                android:text="@string/neighborhood_delivery"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                app:layout_constraintTop_toBottomOf="@id/horizontalContour"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvNeighborhoodDelivery"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/txtNeighborhoodDelivery"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
