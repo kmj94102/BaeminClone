@@ -1,9 +1,10 @@
-package com.example.baeminclone
+package com.example.baeminclone.ui.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.baeminclone.R
 
 class IntroActivity : AppCompatActivity() {
 

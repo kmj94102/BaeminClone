@@ -71,6 +71,11 @@ dependencies {
 
     // KTX
     implementation "org.jetbrains.kotlin:kotlin-reflect:1.6.0"
+    implementation 'androidx.activity:activity-ktx:1.4.0'
+    def lifecycle_version = "2.4.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
     // koin DI
     implementation "io.insert-koin:koin-android:3.1.2"
@@ -85,4 +90,5 @@ dependencies {
 
     // ScaleRatingBar
     implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
+
 }

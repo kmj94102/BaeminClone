@@ -1,4 +1,4 @@
-package com.example.baeminclone
+package com.example.baeminclone.ui.menu
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

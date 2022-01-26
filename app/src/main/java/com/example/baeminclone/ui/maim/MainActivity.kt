@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.example.baeminclone.BaseActivity
 import com.example.baeminclone.R
 import com.example.baeminclone.databinding.ActivityMainBinding
-import com.example.baeminclone.test.TestAFragment
 import com.example.baeminclone.ui.MainViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -27,10 +26,10 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
     private fun initViewPager() {
         val adapter = MainViewPagerAdapter(this)
         adapter.addFragment(DeliveryFragment())
-        adapter.addFragment(TestAFragment())
         adapter.addFragment(DeliveryFragment())
         adapter.addFragment(DeliveryFragment())
-        adapter.addFragment(TestAFragment())
+        adapter.addFragment(DeliveryFragment())
+        adapter.addFragment(DeliveryFragment())
         adapter.addFragment(DeliveryFragment())
 
         binding.viewPager.adapter = adapter

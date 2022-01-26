@@ -1,8 +1,7 @@
 package com.example.baeminclone.di
 
-import com.example.baeminclone.test.TestFragmentViewModel
-import com.example.baeminclone.test.TestViewModel
 import com.example.baeminclone.ui.MainViewModel
+import com.example.baeminclone.ui.home.HomeViewModel
 import com.example.baeminclone.ui.maim.DeliveryViewModel
 import kotlinx.coroutines.Dispatchers
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -13,8 +12,7 @@ internal val appModule = module {
     single { Dispatchers.Main }
     single { Dispatchers.IO }
 
-    viewModel { TestViewModel() }
-    viewModel { TestFragmentViewModel() }
+//    viewModel { HomeViewModel() }
     viewModel { MainViewModel() }
     viewModel { DeliveryViewModel() }
 

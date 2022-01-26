@@ -21,7 +21,7 @@ abstract class BaseActivity<B: ViewDataBinding, VM : ViewModel>(
 
         with(binding) {
             lifecycleOwner = this@BaseActivity
-//            setVariable(BR.vm, viewModel)
+            setVariable(BR.vm, viewModel)
         }
 
     }
