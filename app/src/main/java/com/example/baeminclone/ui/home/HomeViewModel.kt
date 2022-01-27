@@ -5,9 +5,12 @@ import androidx.lifecycle.viewModelScope
 import com.example.baeminclone.MutableEventFlow
 import com.example.baeminclone.asEventFlow
 import com.example.baeminclone.util.getRandomImageList
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class HomeViewModel : ViewModel() {
+@HiltViewModel
+class HomeViewModel @Inject constructor() : ViewModel() {
 
     private val _eventFlow = MutableEventFlow<Event>()
     val eventFlow = _eventFlow.asEventFlow()

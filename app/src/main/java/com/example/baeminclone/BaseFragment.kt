@@ -28,7 +28,7 @@ abstract class BaseFragment<B: ViewDataBinding, VM : ViewModel>(
 
         with(binding) {
             lifecycleOwner = this@BaseFragment
-//            setVariable(BR.vm, viewModel)
+            setVariable(BR.vm, viewModel)
         }
 
         return binding.root

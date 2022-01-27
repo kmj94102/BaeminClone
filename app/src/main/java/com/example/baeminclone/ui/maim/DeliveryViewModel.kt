@@ -1,6 +1,9 @@
 package com.example.baeminclone.ui.maim
 
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class DeliveryViewModel : ViewModel() {
+@HiltViewModel
+class DeliveryViewModel @Inject constructor() : ViewModel() {
 }

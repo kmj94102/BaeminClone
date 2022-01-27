@@ -3,4 +3,11 @@
     <declare-styleable name="CustomAdvertisementView">
         <attr name="AdvertisementRadius" format="dimension"/>
     </declare-styleable>
+    <declare-styleable name="CustomEditTextView">
+        <attr name="bgColor" format="color"/>
+        <attr name="startIcon" format="reference"/>
+        <attr name="initStrokeColor" format="color"/>
+        <attr name="selectStrokeColor" format="color"/>
+        <attr name="hint" format="string"/>
+    </declare-styleable>
 </resources>

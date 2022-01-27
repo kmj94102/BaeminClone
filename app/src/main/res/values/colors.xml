@@ -6,6 +6,7 @@
     <color name="gray_card">#F6F6F6</color>
     <color name="gray_card_stroke">#E5E5E5</color>
     <color name="gray_d7">#D7D7D7</color>
+    <color name="gray_f6">#F6F6F6</color>
     <color name="font_gray">#888888</color>
     <color name="font_black">#030303</color>
 </resources>
