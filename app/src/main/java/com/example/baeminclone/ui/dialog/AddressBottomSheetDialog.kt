@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.FrameLayout
+import androidx.core.view.isVisible
 import com.example.baeminclone.R
 import com.example.baeminclone.databinding.BottomSheetDialogAddressBinding
 import com.example.baeminclone.util.hideKeyBoard
@@ -63,10 +64,14 @@ class AddressBottomSheetDialog : BottomSheetDialogFragment() {
 
         etAddress.apply {
             setFocusListener {
-                // todo 페이지 변경 추가
+                group.isVisible = false
+                rvRegisteredAddress.isVisible = false
+                imgSearchGuide.isVisible = true
             }
             setSearchListener { searchText ->
-                // todo 검색 로직 추가
+                imgSearchGuide.isVisible = false
+                rvAddress.isVisible = true
+                layoutRoot.performClick()
             }
         }
 

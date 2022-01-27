@@ -110,6 +110,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+
+
+    <!-- 등록 된 주소 리스트 영역 -->
     <ImageView
         android:id="@+id/imgAddressNull"
         android:layout_width="155dp"
@@ -162,7 +165,7 @@
         app:constraint_referenced_ids="cardAddressNull, imgAddressNull, txtAddressNull"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/rvRegisteredAddress"
         android:visibility="gone"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -175,5 +178,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/cell_location"/>
+
+
+
+    <!-- 주소 검색 영역 -->
+    <ImageView
+        android:id="@+id/imgSearchGuide"
+        android:layout_width="320dp"
+        android:layout_height="168dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/img_search_guide"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/viewBackground"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAddress"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:paddingTop="6dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/viewBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/cell_location"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
