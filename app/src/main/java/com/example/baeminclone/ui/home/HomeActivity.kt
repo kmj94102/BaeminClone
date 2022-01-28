@@ -5,9 +5,9 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.baeminclone.BaseActivity
 import com.example.baeminclone.R
-import com.example.baeminclone.ui.menu.MenuActivity
 import com.example.baeminclone.databinding.ActivityHomeBinding
 import com.example.baeminclone.ui.maim.MainActivity
+import com.example.baeminclone.ui.menu.MenuActivity
 import com.example.baeminclone.util.repeatOnStarted
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -38,6 +38,7 @@ class HomeActivity() : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout
         }
 
         viewModel.getImageList()
+        viewModel.getAddressList()
     }
 
     private fun handleEvent(event: HomeViewModel.Event) {
