@@ -23,18 +23,6 @@ class HomeViewModel @Inject constructor() : ViewModel() {
         event(Event.ImageList(list))
     }
 
-    fun getAddressList(){
-        viewModelScope.launch {
-            AddressApiUtil.ADDRESS_API.getAddress(keyword = "가능로 109번길").body()?.apply {
-                Log.e("++++++", "body : $this")
-                Log.e("++++", "result : ${results.common.errorCode} / ${results.common.errorMessage} / ${results.common.totalCount}")
-                results.juso.forEach {
-                    Log.e("+++++", "${it.roadAddr}")
-                }
-            }
-        }
-    }
-
     private fun event(event: Event) {
         viewModelScope.launch {
             _eventFlow.emit(event)

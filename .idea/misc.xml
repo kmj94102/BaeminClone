@@ -30,10 +30,16 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/custom_edit_text.xml" value="0.7617224880382775" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/databinding_variable.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/fragment_delivery.xml" value="0.36614583333333334" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.24909420289855072" />
+        <entry key="app/src/main/res/layout/bottom_sheet_dialog_address.xml" value="0.1955420466058764" />
+        <entry key="app/src/main/res/layout/cell_address.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/cell_advertisement.xml" value="0.1955420466058764" />
+        <entry key="app/src/main/res/layout/cell_location.xml" value="0.3197463768115942" />
+        <entry key="app/src/main/res/layout/cell_neighorhood_delivery.xml" value="0.3197463768115942" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" project-jdk-name="13" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

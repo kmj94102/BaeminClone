@@ -1,6 +1,8 @@
 package com.example.baeminclone.util
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 
@@ -21,4 +23,8 @@ fun hideKeyBoard(context: Context, view: View){
         // focus 효과 주고 터치는 제거
         view.isFocusableInTouchMode = false
     }
+}
+
+fun <T>Activity.startActivity(clazz: Class<T>) {
+    startActivity(Intent(this, clazz))
 }

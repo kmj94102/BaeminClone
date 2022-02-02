@@ -76,9 +76,10 @@ class CustomEditTextView : ConstraintLayout {
                     if (keyEvent.action == KeyEvent.ACTION_UP) {
                         searchListener?.invoke(editText.text.toString())
                     }
+                    return@setOnKeyListener true
                 }
             }
-            return@setOnKeyListener true
+            return@setOnKeyListener false
         }
 
     }
