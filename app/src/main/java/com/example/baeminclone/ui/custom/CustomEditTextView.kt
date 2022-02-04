@@ -47,9 +47,14 @@ class CustomEditTextView : ConstraintLayout {
         val hint = typeArray.getString(R.styleable.CustomEditTextView_hint)
         val initStrokeColor = typeArray.getResourceId(R.styleable.CustomEditTextView_initStrokeColor, -1)
         val selectStrokeColor = typeArray.getResourceId(R.styleable.CustomEditTextView_selectStrokeColor, -1)
+        val radius = typeArray.getDimensionPixelSize(R.styleable.CustomEditTextView_EditTextRadius, -1)
 
         if (bgColor != -1) {
             cardView.setCardBackgroundColor(ContextCompat.getColor(context, bgColor))
+        }
+
+        if (radius != -1) {
+            cardView.radius = radius.toFloat()
         }
 
         editText.setCompoundDrawablesWithIntrinsicBounds(startIcon, 0, 0, 0)

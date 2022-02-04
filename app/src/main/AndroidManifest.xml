@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BaeminClone">
         <activity
+            android:name=".ui.address.AddressRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.address.AddressSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.address.AddressSettingActivity"
+            android:exported="false" />
+        <activity
             android:name=".StoreDetailActivity"
             android:exported="false" />
         <activity

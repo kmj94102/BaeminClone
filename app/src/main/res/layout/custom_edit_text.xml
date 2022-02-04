@@ -24,12 +24,12 @@
             android:layout_height="match_parent"
             android:layout_marginVertical="11dp"
             android:layout_marginHorizontal="9dp"
-            android:drawableStart="@drawable/ic_search_gray"
             android:drawablePadding="4dp"
             android:maxLines="1"
             android:textSize="14sp"
             android:fontFamily="@font/bm_hanna_air"
             android:background="@android:color/transparent"
+            android:minHeight="24dp"
             android:hint="힌트가 들어갑니다"/>
 
     </com.google.android.material.card.MaterialCardView>

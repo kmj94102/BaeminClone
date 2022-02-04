@@ -5,9 +5,9 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsetsController
 import androidx.activity.viewModels
-import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import com.example.baeminclone.BaseActivity
+import com.example.baeminclone.BaseViewPagerAdapter
 import com.example.baeminclone.R
 import com.example.baeminclone.databinding.ActivityMainBinding
 import com.example.baeminclone.ui.MainViewModel
@@ -60,7 +60,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
 
     /** 뷰페이저 설정 **/
     private fun initViewPager() {
-        val adapter = MainViewPagerAdapter(this)
+        val adapter = BaseViewPagerAdapter(this)
         adapter.addFragment(DeliveryFragment())
         adapter.addFragment(DeliveryFragment())
         adapter.addFragment(DeliveryFragment())

@@ -1,8 +1,8 @@
 package com.example.baeminclone.ui.dialog
 
 import android.app.Dialog
-import android.content.Context
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +35,8 @@ class AddressBottomSheetDialog : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View = binding.root
 
+    override fun getTheme(): Int = R.style.MyBottomSheetDialog
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -43,15 +45,11 @@ class AddressBottomSheetDialog : BottomSheetDialogFragment() {
             setVariable(BR.vm, viewModel)
         }
 
-        setStyle(
-            STYLE_NORMAL,
-            R.style.MyBottomSheetDialog
-        )
-
         repeatOnStarted {
             viewModel.eventFlow.collect { event -> handleEvent(event) }
         }
 
+        setBackPressed()
         initViews()
 
     }
@@ -70,13 +68,6 @@ class AddressBottomSheetDialog : BottomSheetDialogFragment() {
         return bottomSheetDialog
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-
-
-
-    }
-
     private fun initViews() = with(binding) {
         layoutRoot.setOnClickListener {
             hideKeyBoard(requireContext(), it)
@@ -86,7 +77,7 @@ class AddressBottomSheetDialog : BottomSheetDialogFragment() {
 
         etAddress.apply {
             setFocusListener {
-                if((rvAddress.adapter as? AddressAdapter)?.currentList?.isEmpty() == true) {
+                if((rvAddress.adapter as? AddressSearchAdapter)?.currentList?.isEmpty() == true) {
                     showSearchView()
                     imgSearchGuide.isVisible = true
                 }
@@ -94,13 +85,13 @@ class AddressBottomSheetDialog : BottomSheetDialogFragment() {
             setSearchListener { searchText ->
                 imgSearchGuide.isVisible = false
                 rvAddress.isVisible = true
-                rvAddress.adapter = AddressAdapter()
+//                rvAddress.adapter = AddressSearchAdapter()
                 viewModel.getAddressList(searchText, true)
                 layoutRoot.performClick()
             }
         }
 
-        rvAddress.adapter = AddressAdapter()
+//        rvAddress.adapter = AddressSearchAdapter()
 
         rvAddress.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -117,15 +108,17 @@ class AddressBottomSheetDialog : BottomSheetDialogFragment() {
     }
 
     private fun showSearchView() = with(binding) {
-        isSettingView = true
+        isSettingView = false
+        viewBack.isVisible = false
         group.isVisible = false
         rvRegisteredAddress.isVisible = false
     }
 
     private fun showSettingView() = with(binding) {
         isSettingView = true
-        group.isVisible = false
-        rvRegisteredAddress.isVisible = false
+        viewBack.isVisible = true
+        group.isVisible = true
+        rvRegisteredAddress.isVisible = true
         imgSearchGuide.isVisible = false
         rvAddress.isVisible = false
     }
@@ -134,7 +127,7 @@ class AddressBottomSheetDialog : BottomSheetDialogFragment() {
         when(event) {
             is AddressViewModel.Event.AddressList -> {
                 isMoreData = event.isMoreData
-                (binding.rvAddress.adapter as? AddressAdapter)?.apply {
+                (binding.rvAddress.adapter as? AddressSearchAdapter)?.apply {
                     submitList(currentList + event.list)
                 }
             }
@@ -142,6 +135,27 @@ class AddressBottomSheetDialog : BottomSheetDialogFragment() {
             is AddressViewModel.Event.Error -> {
                 Toast.makeText(requireActivity(), "오류가 발생하였습니다.", Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    private fun setBackPressed() {
+        dialog?.setOnKeyListener { _, _, keyEvent ->
+            when(keyEvent.keyCode) {
+                KeyEvent.KEYCODE_BACK -> {
+                    if (keyEvent.action == KeyEvent.ACTION_UP){
+                        if (isSettingView) {
+                            dialog?.dismiss()
+                            return@setOnKeyListener false
+                        } else {
+                            showSettingView()
+                        }
+                    }
+                }
+                else -> {
+                    return@setOnKeyListener false
+                }
+            }
+            return@setOnKeyListener true
         }
     }
 

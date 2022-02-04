@@ -5,6 +5,7 @@ import androidx.activity.viewModels
 import com.example.baeminclone.BaseActivity
 import com.example.baeminclone.R
 import com.example.baeminclone.databinding.ActivityHomeBinding
+import com.example.baeminclone.ui.address.AddressSettingActivity
 import com.example.baeminclone.ui.dialog.AddressBottomSheetDialog
 import com.example.baeminclone.ui.maim.MainActivity
 import com.example.baeminclone.ui.menu.MenuActivity
@@ -39,8 +40,10 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(R.layout.a
         }
 
         txtAddress.setOnClickListener {
-            val bottom = AddressBottomSheetDialog()
-            bottom.show(supportFragmentManager, bottom.tag)
+//            val bottom = AddressBottomSheetDialog()
+//            bottom.show(supportFragmentManager, bottom.tag)
+            startActivity(AddressSettingActivity::class.java)
+
         }
 
         viewModel.getImageList()

@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 
 fun Int.pxToDp(context: Context) : Float {
     val density = context.resources.displayMetrics.density
@@ -27,4 +28,10 @@ fun hideKeyBoard(context: Context, view: View){
 
 fun <T>Activity.startActivity(clazz: Class<T>) {
     startActivity(Intent(this, clazz))
+}
+
+fun <T>Activity.intent(clazz: Class<T>) : Intent = Intent(this, clazz)
+
+fun Activity.toast(message : String) {
+    Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 }

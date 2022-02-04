@@ -3,11 +3,21 @@
     <declare-styleable name="CustomAdvertisementView">
         <attr name="AdvertisementRadius" format="dimension"/>
     </declare-styleable>
+
     <declare-styleable name="CustomEditTextView">
         <attr name="bgColor" format="color"/>
         <attr name="startIcon" format="reference"/>
         <attr name="initStrokeColor" format="color"/>
         <attr name="selectStrokeColor" format="color"/>
         <attr name="hint" format="string"/>
+        <attr name="EditTextRadius" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomRadioSelectItem">
+        <attr name="isSelectedItem" format="boolean"/>
+        <attr name="checkedBackground" format="reference"/>
+        <attr name="uncheckedBackground" format="reference"/>
+        <attr name="checkedColor" format="reference"/>
+        <attr name="uncheckedColor" format="reference"/>
     </declare-styleable>
 </resources>
