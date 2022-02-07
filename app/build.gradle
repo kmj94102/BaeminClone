@@ -75,6 +75,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-reflect:1.6.10"
     implementation 'androidx.activity:activity-ktx:1.4.0'
     def lifecycle_version = "2.4.0"
+    implementation 'androidx.fragment:fragment-ktx:1.4.1'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
