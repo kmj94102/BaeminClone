@@ -23,7 +23,7 @@ class AddressViewModel @Inject constructor() : ViewModel() {
             }
 
             AddressApiUtil.ADDRESS_API.getAddress(keyword = currentKeyword, currentPage = currentPage).body()?.apply {
-                val list = results.juso.mapNotNull { it.roadAddr }
+                val list = results.juso!!.mapNotNull { it.roadAddr }
                 if (results.common.errorCode == "0") {
                     val isMoreData = results.common.totalCount?.toInt() ?: 0 > (results.common.countPerPage ?: 10) * currentPage
                     event(Event.AddressList(list, isMoreData))

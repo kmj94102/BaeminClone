@@ -2,8 +2,6 @@ package com.example.baeminclone.network
 
 import com.example.baeminclone.BuildConfig
 import com.example.baeminclone.util.Constants
-import com.google.gson.FieldNamingPolicy
-import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -12,7 +10,7 @@ import java.util.concurrent.TimeUnit
 
 object AddressApiUtil {
 
-    val ADDRESS_API : AddressApi by lazy { getAddressRetrofit().create(AddressApi::class.java) }
+    val ADDRESS_API : AddressService by lazy { getAddressRetrofit().create(AddressService::class.java) }
 
     fun getAddressRetrofit() : Retrofit =
         Retrofit.Builder()

@@ -17,7 +17,7 @@ data class AddressResult(
 
 data class AddressData(
     val common : AddressCommon,
-    val juso : List<Juso>
+    val juso : List<Juso>?
 )
 
 data class AddressCommon(

@@ -79,7 +79,11 @@ class CustomEditTextView : ConstraintLayout {
             when(keyCode) {
                 KeyEvent.KEYCODE_ENTER -> {
                     if (keyEvent.action == KeyEvent.ACTION_UP) {
-                        searchListener?.invoke(editText.text.toString())
+                        if(editText.text.isNullOrBlank()) {
+                            
+                        } else {
+                            searchListener?.invoke(editText.text.toString())
+                        }
                     }
                     return@setOnKeyListener true
                 }

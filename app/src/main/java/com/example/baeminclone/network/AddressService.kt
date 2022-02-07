@@ -1,11 +1,11 @@
 package com.example.baeminclone.network
 
-import com.example.baeminclone.util.AddressParam
 import com.example.baeminclone.util.AddressResult
 import retrofit2.Response
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.Query
 
-interface AddressApi {
+interface AddressService {
 
     // https://www.juso.go.kr/addrlink/devAddrLinkRequestGuide.do?menu=roadApi
     @GET("addrlink/addrLinkApi.do")
