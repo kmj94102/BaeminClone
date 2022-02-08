@@ -1,4 +1,4 @@
-package com.example.baeminclone.ui.dialog
+package com.example.baeminclone.ui.address.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,12 +8,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.baeminclone.databinding.CellAddressBinding
 
-class AddressSearchAdapter(val itemClickListener : (String) -> Unit) : ListAdapter<String, AddressSearchAdapter.ViewHolder>(diffUtil) {
+class AddressSearchAdapter(val itemClickListener : (String) -> Unit) : ListAdapter<String, AddressSearchAdapter.ViewHolder>(
+    diffUtil
+) {
 
     inner class ViewHolder(val binding : CellAddressBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind() = with(binding) {
             txtAddress.text = currentList[adapterPosition]
-            viewLine.isVisible = currentList.size - 1 > adapterPosition
 
             root.setOnClickListener {
                 itemClickListener(txtAddress.text.toString())

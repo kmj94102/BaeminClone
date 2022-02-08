@@ -101,6 +101,8 @@ class CustomEditTextView : ConstraintLayout {
         searchListener = listener
     }
 
+    fun getText() : String = binding.editText.text.toString()
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
 

@@ -5,9 +5,15 @@
 
     <data>
 
+        <import type="android.view.View"/>
+
         <variable
             name="activity"
             type="com.example.baeminclone.ui.address.AddressSettingActivity" />
+
+        <variable
+            name="isListEmpty"
+            type="Boolean" />
 
     </data>
 
@@ -142,9 +148,11 @@
             android:layout_height="170dp"
             android:layout_marginTop="148dp"
             android:onClick="@{activity::onClick}"
+            android:visibility="@{isListEmpty ? View.VISIBLE : View.GONE, default = gone}"
             android:src="@drawable/img_address_null"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/viewBackground" />
+            app:layout_constraintTop_toTopOf="@id/viewBackground"
+            tools:visibility="visible"/>
 
         <TextView
             android:id="@+id/txtAddressNull"
@@ -153,12 +161,14 @@
             android:layout_marginTop="53dp"
             android:fontFamily="@font/bm_hanna_air"
             android:onClick="@{activity::onClick}"
+            android:visibility="@{isListEmpty ? View.VISIBLE : View.GONE, default = gone}"
             android:text="등록된 주소가 없어요."
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imgAddressNull" />
+            app:layout_constraintTop_toBottomOf="@id/imgAddressNull"
+            tools:visibility="visible"/>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardAddressNull"
@@ -166,12 +176,14 @@
             android:layout_height="46dp"
             android:layout_marginTop="15dp"
             android:onClick="@{activity::onClick}"
+            android:visibility="@{isListEmpty ? View.VISIBLE : View.GONE, default = gone}"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txtAddressNull"
-            app:strokeColor="@color/gray_d7">
+            app:strokeColor="@color/gray_d7"
+            tools:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -192,7 +204,7 @@
             android:nestedScrollingEnabled="false"
             android:orientation="vertical"
             android:paddingTop="6dp"
-            android:visibility="gone"
+            android:visibility="@{isListEmpty ? View.GONE : View.VISIBLE, default = gone}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

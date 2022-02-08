@@ -16,7 +16,7 @@
         tools:src="@drawable/ic_home"/>
 
     <TextView
-        android:id="@+id/txtNickName"
+        android:id="@+id/txtAlias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -29,6 +29,7 @@
         tools:text="닉네임"/>
 
     <TextView
+        android:id="@+id/txtAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
@@ -36,8 +37,8 @@
         android:textSize="14sp"
         android:textColor="@color/font_gray"
         android:fontFamily="@font/bm_hanna_air"
-        app:layout_constraintStart_toStartOf="@id/txtNickName"
-        app:layout_constraintTop_toBottomOf="@id/txtNickName"
+        app:layout_constraintStart_toStartOf="@id/txtAlias"
+        app:layout_constraintTop_toBottomOf="@id/txtAlias"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:text="상세 주소가 들어갑니다"/>
 

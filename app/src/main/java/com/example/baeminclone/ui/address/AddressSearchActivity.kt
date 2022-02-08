@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.baeminclone.BaseActivity
 import com.example.baeminclone.R
 import com.example.baeminclone.databinding.ActivityAddressSearchBinding
-import com.example.baeminclone.ui.dialog.AddressSearchAdapter
+import com.example.baeminclone.ui.address.adapter.AddressSearchAdapter
 import com.example.baeminclone.util.hideKeyBoard
 import com.example.baeminclone.util.intent
 import com.example.baeminclone.util.repeatOnStarted

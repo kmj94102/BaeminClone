@@ -10,7 +10,7 @@ import com.example.baeminclone.database.entity.AddressEntity
 interface AddressDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertAddress(addressEntity: AddressEntity)
+    suspend fun insertAddress(addressEntity: AddressEntity) : Long
 
     @Query("SELECT * FROM AddressEntity")
     suspend fun selectAllAddress() : List<AddressEntity>

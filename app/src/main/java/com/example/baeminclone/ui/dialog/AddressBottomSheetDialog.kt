@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.baeminclone.BR
 import com.example.baeminclone.R
 import com.example.baeminclone.databinding.BottomSheetDialogAddressBinding
+import com.example.baeminclone.ui.address.adapter.AddressSearchAdapter
 import com.example.baeminclone.util.hideKeyBoard
 import com.example.baeminclone.util.repeatOnStarted
 import com.google.android.material.bottomsheet.BottomSheetBehavior
