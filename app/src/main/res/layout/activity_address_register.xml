@@ -27,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/transparent"
+        android:onClick="@{activity::onClick}"
         tools:context=".ui.address.AddressRegisterActivity">
 
         <View
@@ -62,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="41dp"
             android:fontFamily="@font/bm_hanna"
-            android:text="상세 정보 입력"
+            android:text="@string/enter_detailed_information"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +99,7 @@
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/viewLine"
-            tools:text="서울 강남구 논현로 151길" />
+            tools:text="주소가 나올 예정입니다." />
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardView"
@@ -116,9 +117,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/bm_hanna_air"
-                android:text="도로명"
+                android:text="@string/road_name"
                 android:textColor="@color/font_gray"
-                android:textSize="10sp" />
+                android:textSize="10sp"
+                tools:ignore="SmallSp" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -133,7 +135,7 @@
             app:layout_constraintBottom_toBottomOf="@id/cardView"
             app:layout_constraintStart_toEndOf="@id/cardView"
             app:layout_constraintTop_toTopOf="@id/cardView"
-            tools:text="서울 강남구 논현로" />
+            tools:text="도로명 주소가 나올 예정입니다." />
 
         <com.example.baeminclone.ui.custom.CustomEditTextView
             android:id="@+id/etAddress"
@@ -142,7 +144,7 @@
             android:layout_marginTop="16dp"
             app:EditTextRadius="4dp"
             app:bgColor="@color/white"
-            app:hint="상세 주소 입력"
+            app:hint="@string/enter_detailed_address"
             app:initStrokeColor="@color/gray_card_stroke"
             app:layout_constraintEnd_toEndOf="@id/radioGroup"
             app:layout_constraintStart_toStartOf="@id/radioGroup"
@@ -170,7 +172,7 @@
                 android:gravity="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="16dp"
-                android:text="우리집"
+                android:text="@string/my_home"
                 app:checkedBackground="@drawable/bg_rounded_border_brown_4"
                 app:checkedColor="@color/brown"
                 app:layout_constraintEnd_toStartOf="@id/radioCompany"
@@ -190,7 +192,7 @@
                 android:gravity="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="16dp"
-                android:text="회사"
+                android:text="@string/company"
                 app:checkedBackground="@drawable/bg_rounded_border_brown_4"
                 app:checkedColor="@color/brown"
                 app:layout_constraintEnd_toStartOf="@id/radioEtc"
@@ -208,7 +210,7 @@
                 android:gravity="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="16dp"
-                android:text="기타"
+                android:text="@string/etc"
                 app:checkedBackground="@drawable/bg_rounded_border_brown_4"
                 app:checkedColor="@color/brown"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -236,7 +238,7 @@
                 android:layout_marginTop="22dp"
                 app:EditTextRadius="4dp"
                 app:bgColor="@color/white"
-                app:hint="주소 별명 입력"
+                app:hint="@string/enter_detailed_alias"
                 app:initStrokeColor="@color/gray_card_stroke"
                 app:selectStrokeColor="@color/black"
                 app:startIcon="@color/white"
@@ -260,7 +262,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="3dp"
-            android:text="지도에서 위치 확인"
+            android:text="@string/check_location_on_map"
             android:textSize="12sp"
             android:onClick="@{activity::onClick}"
             app:layout_constraintBottom_toBottomOf="@id/viewMap"
@@ -314,7 +316,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginVertical="15dp"
-                android:text="완료"
+                android:text="@string/complete"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 

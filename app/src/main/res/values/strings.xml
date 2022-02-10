@@ -37,4 +37,28 @@
     <string name="neighborhood_delivery">우리동네 빠른 배달</string>
     <string name="share">공유</string>
     <string name="advertisement_state">%1$d / %2$d 모두 보기</string>
+
+    <!-- 주소 -->
+    <string name="address_setting">주소 설정</string>
+    <string name="address_search_guide">지번, 도로명, 건물명으로 검색</string>
+    <string name="current_location_setting">현재 위치로 설정</string>
+    <string name="register_address_empty">등록된 주소가 없어요.</string>
+    <string name="address_search">주소 검색</string>
+    <string name="road_name">도로명</string>
+    <string name="enter_detailed_information">상세 정보 입력</string>
+    <string name="enter_detailed_address">상세 주소 입력</string>
+    <string name="enter_detailed_alias">주소 별명 입력</string>
+    <string name="check_location_on_map">지도에서 위치 확인</string>
+
+    <!-- 공통 -->
+    <string name="error_guide_message">오류가 발생하였습니다.</string>
+    <string name="retry">다시 시도하기</string>
+    <string name="search_result_empty">검색 결과가 없습니다.</string>
+    <string name="preparing">준비 중입니다~</string>
+    <string name="register_complete">등록이 완료되었습니다.</string>
+    <string name="my_home">우리집</string>
+    <string name="company">회사</string>
+    <string name="etc">기타</string>
+    <string name="complete">완료</string>
+
 </resources>

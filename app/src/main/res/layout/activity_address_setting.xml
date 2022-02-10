@@ -12,6 +12,10 @@
             type="com.example.baeminclone.ui.address.AddressSettingActivity" />
 
         <variable
+            name="vm"
+            type="com.example.baeminclone.ui.address.AddressSettingViewModel" />
+
+        <variable
             name="isListEmpty"
             type="Boolean" />
 
@@ -60,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="41dp"
             android:fontFamily="@font/bm_hanna"
-            android:text="주소 설정"
+            android:text="@string/address_setting"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +79,7 @@
             android:layout_marginTop="16dp"
             android:onClick="@{activity::onClick}"
             app:bgColor="@color/gray_f6"
-            app:hint="지번, 도로명, 건물명으로 검색"
+            app:hint="@string/address_search_guide"
             app:initStrokeColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +105,7 @@
             android:layout_marginStart="2dp"
             android:fontFamily="@font/bm_hanna_air"
             android:onClick="@{activity::onClick}"
-            android:text="현재 위치로 설정"
+            android:text="@string/current_location_setting"
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/viewLocation"
@@ -162,7 +166,7 @@
             android:fontFamily="@font/bm_hanna_air"
             android:onClick="@{activity::onClick}"
             android:visibility="@{isListEmpty ? View.VISIBLE : View.GONE, default = gone}"
-            android:text="등록된 주소가 없어요."
+            android:text="@string/register_address_empty"
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -190,7 +194,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/bm_hanna_air"
-                android:text="다시 시도하기"
+                android:text="@string/retry"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
@@ -211,6 +215,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/viewBackground"
             tools:listitem="@layout/cell_location" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{vm.loading ? View.VISIBLE : View.GONE, default = gone}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:visibility="visible"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

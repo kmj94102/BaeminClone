@@ -1,13 +1,15 @@
 package com.example.baeminclone.database.entity
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(indices = [Index(value = ["address", "alias", "type"], unique = true)])
 data class AddressEntity(
     @PrimaryKey(autoGenerate = true) val id : Long = 0,
-    val address : String,
-    val alias : String,
-    val type : Int,
-    val status : Boolean = false
+    @ColumnInfo(name = "address") val address : String,
+    @ColumnInfo(name = "alias") val alias : String,
+    @ColumnInfo(name = "type") val type : Int,
+    @ColumnInfo(name = "status") val status : Boolean = false
 )

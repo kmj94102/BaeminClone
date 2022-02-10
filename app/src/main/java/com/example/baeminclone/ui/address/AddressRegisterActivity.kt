@@ -11,6 +11,7 @@ import com.example.baeminclone.databinding.ActivityAddressRegisterBinding
 import com.example.baeminclone.util.repeatOnStarted
 import com.example.baeminclone.util.toast
 import com.example.baeminclone.ui.address.AddressRegisterViewModel.AddressRegisterEvent
+import com.example.baeminclone.util.hideKeyBoard
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
@@ -32,12 +33,28 @@ class AddressRegisterActivity : BaseActivity<ActivityAddressRegisterBinding, Add
 
     }
 
+    /** 이벤트 핸들러 **/
+    private fun handleEvent(event: AddressRegisterEvent) {
+        when(event) {
+            is AddressRegisterEvent.AddressInsert -> {
+                toast(R.string.register_complete)
+                setResult(Activity.RESULT_OK)
+                onBackPressed()
+            }
+            is AddressRegisterEvent.Error -> {
+                toast(R.string.error_guide_message)
+            }
+        }
+    }
+
+    /** 각종 뷰들 및 바인딩 초기화 **/
     private fun initViews() = with(binding) {
         activity = this@AddressRegisterActivity
         isEtc = false
 
-        address = intent?.getStringExtra("ADDRESS")
+        address = intent?.getStringExtra(AddressSearchActivity.ADDRESS)
 
+        // 주소 타입 변경 리스너
         radioGroup.setOnSelectedChangeListener {
             isEtc = radioEtc.id == it
         }
@@ -45,6 +62,13 @@ class AddressRegisterActivity : BaseActivity<ActivityAddressRegisterBinding, Add
 
     fun onClick(view: View?) = with(binding) {
         if (view == null) return
+
+        // 검색창 외 선택 시 포커스, 키보드 제거
+        if(view.id != etAddress.id && view.id != etAddressAlias.id) {
+            etAddress.clearFocus()
+            etAddressAlias.clearFocus()
+            hideKeyBoard(this@AddressRegisterActivity, view)
+        }
 
         when(view.id) {
             // [뒤로가기]
@@ -63,48 +87,34 @@ class AddressRegisterActivity : BaseActivity<ActivityAddressRegisterBinding, Add
         }
     }
 
+    /** 주소 등록 **/
     private fun insertAddress() {
         val address = "${binding.address}, ${binding.etAddress.getText()}"
-        val alias = if (binding.etAddressAlias.getText().isNotEmpty()) binding.etAddressAlias.getText() else address
+        val alias = binding.etAddressAlias.getText().ifEmpty { address }
 
         val addressEntity = AddressEntity(
             address = address,
-            alias = address,
-            type = getAddressType(),
+            alias = alias,
+            type = getAddressTypeCode(),
             status = true
         )
-
-        // todo 기존 status true 수정 필요
 
         viewModel.insertAddress(addressEntity)
     }
 
-    private fun getAddressType() : Int =
-        when(binding.radioGroup.getSelectedItemIndex()){
+    /** 주소 타입에 해당하는 코드값 얻기 **/
+    private fun getAddressTypeCode() : Int =
+        when(binding.radioGroup.getSelectItemId()){
             binding.radioHome.id -> {
                 AddressType.HOME.code
             }
             binding.radioCompany.id -> {
                 AddressType.COMPANY.code
-
             }
             else -> {
                 AddressType.ETC.code
             }
         }
-
-    private fun handleEvent(event: AddressRegisterEvent) {
-        when(event) {
-            is AddressRegisterEvent.AddressInsert -> {
-                toast("등록이 완료되었습니다.")
-                setResult(Activity.RESULT_OK)
-                onBackPressed()
-            }
-            is AddressRegisterEvent.Error -> {
-                toast("오류가 발생하였습니다.")
-            }
-        }
-    }
 
     override fun onBackPressed() {
         super.onBackPressed()

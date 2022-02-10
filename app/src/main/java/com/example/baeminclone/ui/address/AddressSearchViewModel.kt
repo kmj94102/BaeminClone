@@ -1,5 +1,6 @@
 package com.example.baeminclone.ui.address
 
+import androidx.databinding.ObservableBoolean
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.baeminclone.MutableEventFlow
@@ -16,10 +17,14 @@ class AddressSearchViewModel @Inject constructor(
 ) : ViewModel() {
     private val _eventFlow = MutableEventFlow<AddressSearchEvent>()
     val eventFlow = _eventFlow.asEventFlow()
+
     private var currentPage = 1
     private var currentKeyword = ""
+    var isLoading : ObservableBoolean = ObservableBoolean(false)
 
     fun getAddressList(keyword: String, isSearch: Boolean) = viewModelScope.launch {
+        isLoading.set(true)
+
         if (isSearch) {
             currentPage = 1
             currentKeyword = keyword
@@ -34,6 +39,7 @@ class AddressSearchViewModel @Inject constructor(
                 event(AddressSearchEvent.Error)
             }
 
+            isLoading.set(false)
             currentPage++
         }
 

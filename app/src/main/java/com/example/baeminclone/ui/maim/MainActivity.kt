@@ -11,7 +11,8 @@ import com.example.baeminclone.BaseViewPagerAdapter
 import com.example.baeminclone.R
 import com.example.baeminclone.databinding.ActivityMainBinding
 import com.example.baeminclone.ui.MainViewModel
-import com.example.baeminclone.ui.dialog.AddressBottomSheetDialog
+import com.example.baeminclone.ui.address.AddressSettingActivity
+import com.example.baeminclone.util.startActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -42,8 +43,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(R.layout.a
         }
 
         txtAddress.setOnClickListener {
-            val bottom = AddressBottomSheetDialog()
-            bottom.show(supportFragmentManager, bottom.tag)
+            startActivity(AddressSettingActivity::class.java)
         }
 
     }

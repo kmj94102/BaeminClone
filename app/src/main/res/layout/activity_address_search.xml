@@ -6,9 +6,15 @@
 
     <data>
 
+        <import type="android.view.View"/>
+
         <variable
             name="activity"
             type="com.example.baeminclone.ui.address.AddressSearchActivity" />
+
+        <variable
+            name="vm"
+            type="com.example.baeminclone.ui.address.AddressSearchViewModel" />
 
     </data>
 
@@ -54,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="41dp"
             android:fontFamily="@font/bm_hanna"
-            android:text="주소 검색"
+            android:text="@string/address_search"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,7 +74,7 @@
             android:layout_marginHorizontal="14dp"
             android:layout_marginTop="16dp"
             app:bgColor="@color/gray_f6"
-            app:hint="지번, 도로명, 건물명으로 검색"
+            app:hint="@string/address_search_guide"
             app:initStrokeColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="2dp"
             android:fontFamily="@font/bm_hanna_air"
-            android:text="현재 위치로 설정"
+            android:text="@string/current_location_setting"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:onClick="@{activity::onClick}"
@@ -150,14 +156,25 @@
             android:layout_height="0dp"
             android:paddingTop="6dp"
             android:clipToPadding="false"
+            android:visibility="gone"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"
             app:layout_constraintTop_toTopOf="@id/viewBackground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:listitem="@layout/cell_location"/>
+            tools:listitem="@layout/cell_location"
+            tools:visibility="visible"/>
 
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{vm.isLoading() ? View.VISIBLE : View.GONE, default=gone}"
+            app:layout_constraintTop_toTopOf="@id/viewBackground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:visibility="visible"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

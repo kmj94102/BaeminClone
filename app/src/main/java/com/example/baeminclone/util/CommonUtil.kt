@@ -27,11 +27,15 @@ fun hideKeyBoard(context: Context, view: View){
 }
 
 fun <T>Activity.startActivity(clazz: Class<T>) {
-    startActivity(Intent(this, clazz))
+    startActivity(intent(clazz))
 }
 
 fun <T>Activity.intent(clazz: Class<T>) : Intent = Intent(this, clazz)
 
 fun Activity.toast(message : String) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+}
+
+fun Activity.toast(res : Int){
+    Toast.makeText(this, getString(res), Toast.LENGTH_SHORT).show()
 }

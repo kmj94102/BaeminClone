@@ -29,6 +29,8 @@ class CustomRadioSelectGroup : ConstraintLayout {
         return selectItemIndex
     }
 
+    fun getSelectItemId() : Int = oldSelectItem
+
     fun helpSingleSelect(newSelectItem: Int, isSelected : Boolean){
         if (oldSelectItem == newSelectItem) return
         if(oldSelectItem != -1){

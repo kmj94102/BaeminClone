@@ -28,33 +28,50 @@ class AddressSearchActivity : BaseActivity<ActivityAddressSearchBinding, Address
         super.onCreate(savedInstanceState)
 
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        binding.activity = this
+
+        initViews()
 
         repeatOnStarted {
             viewModel.eventFlow.collect { event -> handleEvent(event) }
         }
 
-        initViews()
-
     }
 
+    /** 이벤트 핸들러 **/
     private fun handleEvent(event : AddressSearchViewModel.AddressSearchEvent) {
         when(event) {
             is AddressSearchViewModel.AddressSearchEvent.AddressList -> {
-                binding.imgSearchGuide.isVisible = false
                 isMoreData = event.isMoreData
-
-                (binding.rvAddress.adapter as? AddressSearchAdapter)?.apply {
-                    submitList(currentList + event.list)
-                }
+                rvAddressSetting(event.list)
             }
             is AddressSearchViewModel.AddressSearchEvent.Error -> {
-                toast("오류가 발생하였습니다.")
+                toast(getString(R.string.error_guide_message))
             }
         }
     }
 
+    /** 주소 검색 리사이클러뷰 셋팅 **/
+    private fun rvAddressSetting(list: List<String>) {
+        (binding.rvAddress.adapter as? AddressSearchAdapter)?.apply {
+            submitList(currentList + list)
+
+            if (currentList.isNotEmpty()) {
+                binding.rvAddress.isVisible = true
+                binding.imgSearchGuide.isVisible = false
+            } else {
+                binding.rvAddress.isVisible = false
+                binding.imgSearchGuide.isVisible = true
+                toast(getString(R.string.search_result_empty))
+            }
+
+        }
+    }
+
+    /** 각종 뷰들 및 바인딩 초기화 **/
     private fun initViews() = with(binding) {
+        activity = this@AddressSearchActivity
+
+        // [주소 검색]
         etAddress.apply {
             setFocusListener {
                 if((rvAddress.adapter as? AddressSearchAdapter)?.currentList?.isEmpty() == true) {
@@ -62,14 +79,15 @@ class AddressSearchActivity : BaseActivity<ActivityAddressSearchBinding, Address
                 }
             }
             setSearchListener { searchText ->
-                rvAddress.isVisible = true
                 rvAddress.adapter = AddressSearchAdapter(this@AddressSearchActivity::rvAddressClickListener)
                 viewModel.getAddressList(searchText, true)
                 layoutRoot.performClick()
             }
+            // 최초 포커스 설정
             requestFocus()
         }
 
+        // [주소 리스트]
         rvAddress.adapter = AddressSearchAdapter(this@AddressSearchActivity::rvAddressClickListener)
 
         rvAddress.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -88,6 +106,7 @@ class AddressSearchActivity : BaseActivity<ActivityAddressSearchBinding, Address
     fun onClick(view: View?) = with(binding) {
         if (view == null) return
 
+        // 검색 창 외 클릭 시 포커스 및 키보드 제거
         if (view.id != etAddress.id) {
             hideKeyBoard(this@AddressSearchActivity, view)
             etAddress.clearFocus()
@@ -100,18 +119,19 @@ class AddressSearchActivity : BaseActivity<ActivityAddressSearchBinding, Address
             }
             // [현재 위치로 설정]
             viewLocation.id, txtLocation.id, viewLocationRight.id -> {
-
+                toast(R.string.preparing)
             }
         }
 
     }
 
     private fun rvAddressClickListener(address: String) {
-        registerLauncher.launch(intent(AddressRegisterActivity::class.java).also { it.putExtra("ADDRESS", address) })
+        registerLauncher.launch(intent(AddressRegisterActivity::class.java).also { it.putExtra(ADDRESS, address) })
     }
 
-    val registerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
+    private val registerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        setResult(result.resultCode)
+        if (result.resultCode == Activity.RESULT_OK ) {
             finish()
         }
     }
@@ -119,6 +139,10 @@ class AddressSearchActivity : BaseActivity<ActivityAddressSearchBinding, Address
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+    }
+
+    companion object {
+        const val ADDRESS = "ADDRESS"
     }
 
 }

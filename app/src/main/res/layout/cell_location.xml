@@ -43,6 +43,7 @@
         tools:text="상세 주소가 들어갑니다"/>
 
     <View
+        android:id="@+id/viewSelect"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:background="@drawable/ic_select"

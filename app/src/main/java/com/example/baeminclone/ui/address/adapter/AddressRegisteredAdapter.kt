@@ -2,6 +2,7 @@ package com.example.baeminclone.ui.address.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -9,7 +10,7 @@ import com.example.baeminclone.database.entity.AddressEntity
 import com.example.baeminclone.databinding.CellLocationBinding
 import com.example.baeminclone.ui.address.getAddressTypeDrawable
 
-class AddressRegisteredAdapter : ListAdapter<AddressEntity, AddressRegisteredAdapter.ViewHolder>(diffUtil) {
+class AddressRegisteredAdapter(private val selectListener : (Long)-> Unit) : ListAdapter<AddressEntity, AddressRegisteredAdapter.ViewHolder>(diffUtil) {
 
     inner class ViewHolder(val binding : CellLocationBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind() = with(binding) {
@@ -17,6 +18,11 @@ class AddressRegisteredAdapter : ListAdapter<AddressEntity, AddressRegisteredAda
             imgStartCard.setBackgroundResource(getAddressTypeDrawable(entity.type))
             txtAlias.text = entity.alias
             txtAddress.text = entity.address
+            viewSelect.isVisible = entity.status
+
+            binding.root.setOnClickListener {
+                selectListener(entity.id)
+            }
         }
     }
 
