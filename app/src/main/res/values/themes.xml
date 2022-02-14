@@ -21,6 +21,12 @@
         <item name="tabSelectedTextColor">@color/white</item>
     </style>
 
+    <style name="ProductTabLayout" parent="Widget.Material3.TabLayout">
+        <item name="fontFamily">@font/bm_hanna</item>
+        <item name="tabTextColor">@color/font_gray</item>
+        <item name="tabSelectedTextColor">@color/black</item>
+    </style>
+
     <style name="MyBottomSheetDialog" parent="Theme.Material3.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
     </style>

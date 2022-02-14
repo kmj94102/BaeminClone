@@ -5,7 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.ColorRes
+import androidx.core.content.ContextCompat
+import com.example.baeminclone.R
 
 fun Int.pxToDp(context: Context) : Float {
     val density = context.resources.displayMetrics.density
@@ -24,6 +28,10 @@ fun hideKeyBoard(context: Context, view: View){
         // focus 효과 주고 터치는 제거
         view.isFocusableInTouchMode = false
     }
+}
+
+fun TextView.setTextColorRes(colorRes: Int) {
+    setTextColor(ContextCompat.getColor(context, colorRes))
 }
 
 fun <T>Activity.startActivity(clazz: Class<T>) {

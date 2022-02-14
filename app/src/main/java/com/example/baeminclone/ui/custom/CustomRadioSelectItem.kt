@@ -6,6 +6,7 @@ import android.content.res.TypedArray
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
 import android.util.AttributeSet
+import android.util.Log
 import androidx.core.content.ContextCompat
 import com.example.baeminclone.R
 
@@ -15,6 +16,7 @@ class CustomRadioSelectItem : com.google.android.material.textview.MaterialTextV
     private var checkedBackgroundRes = resources.getIdentifier("bg_rounded_border_brown_4", "drawable", context.packageName)
     private var uncheckedColorRes = ContextCompat.getColor(context, R.color.gray_card_stroke)
     private var checkedColorRes = ContextCompat.getColor(context, R.color.white)
+    private var basicDrawableColorRes = ContextCompat.getColor(context, R.color.white)
 
     constructor(context : Context) : super(context)
 
@@ -41,6 +43,7 @@ class CustomRadioSelectItem : com.google.android.material.textview.MaterialTextV
         checkedBackgroundRes = typeArray.getResourceId(R.styleable.CustomRadioSelectItem_checkedBackground, R.drawable.bg_rounded_border_brown_4)
         uncheckedColorRes = typeArray.getResourceId(R.styleable.CustomRadioSelectItem_uncheckedColor, R.color.gray_card_stroke)
         checkedColorRes = typeArray.getResourceId(R.styleable.CustomRadioSelectItem_checkedColor, R.color.white)
+        basicDrawableColorRes = typeArray.getResourceId(R.styleable.CustomRadioSelectItem_basicDrawableColor, R.color.white)
 
         setSelected(isSelected)
         if (isSelected) {
@@ -79,10 +82,15 @@ class CustomRadioSelectItem : com.google.android.material.textview.MaterialTextV
     private fun uncheckedView(){
         setBackgroundResource(uncheckedBackgroundRes)
         setTextColor(ContextCompat.getColor(context, uncheckedColorRes))
+
+        if (basicDrawableColorRes == -1 || basicDrawableColorRes == R.color.white) {
+            basicDrawableColorRes = uncheckedColorRes
+        }
+
         for (drawable in compoundDrawables){
             if(drawable != null){
                 drawable.mutate()
-                drawable.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(context, uncheckedColorRes), PorterDuff.Mode.SRC_IN)
+                drawable.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(context, basicDrawableColorRes), PorterDuff.Mode.SRC_IN)
             }
         }
     }

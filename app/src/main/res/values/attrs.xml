@@ -18,6 +18,7 @@
         <attr name="checkedBackground" format="reference"/>
         <attr name="uncheckedBackground" format="reference"/>
         <attr name="checkedColor" format="reference"/>
-        <attr name="uncheckedColor" format="reference"/>
+        <attr name="uncheckedColor" format="reference|color"/>
+        <attr name="basicDrawableColor" format="reference|color"/>
     </declare-styleable>
 </resources>

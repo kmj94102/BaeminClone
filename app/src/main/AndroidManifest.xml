@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BaeminClone">
         <activity
+            android:name=".ui.product.ProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.address.AddressRegisterActivity"
             android:exported="false" />
         <activity

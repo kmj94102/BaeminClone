@@ -54,7 +54,7 @@
             android:layout_marginVertical="10dp"
             android:layout_marginTop="2dp"
             android:paddingStart="15dp"
-            android:paddingEnd="0dp"
+            android:paddingEnd="15dp"
             android:clipToPadding="false"
             android:background="@null"
             app:tabPaddingStart="4dp"

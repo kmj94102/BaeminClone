@@ -11,4 +11,7 @@
     <color name="font_black">#030303</color>
     <color name="brown">#A8744F</color>
     <color name="transparent">#1A000000</color>
+    <color name="fest_icon">#2AC1BC</color>
+    <color name="low_icon">#FFC600</color>
+    <color name="select_brown">#C9A579</color>
 </resources>
