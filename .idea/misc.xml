@@ -4,14 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_bottom_round.xml" value="0.38229166666666664" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_rounded_border_brown_4.xml" value="0.367" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_rounded_border_stroke_4.xml" value="0.367" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_rounded_brown.xml" value="0.367" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_tab_indicator.xml" value="0.367" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_tab_indicator_black.xml" value="0.367" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_tab_non_select.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_tab_select.xml" value="0.38229166666666664" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_top_round.xml" value="0.367" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_white_round_5.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/bg_white_top_round_10.xml" value="0.367" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/ic_arrow_forward.xml" value="0.302" />
@@ -19,43 +13,38 @@
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/ic_search.xml" value="0.367" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/ic_search_gray.xml" value="0.367" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/ic_share.xml" value="0.38229166666666664" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/ic_small_fest.xml" value="0.367" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/ic_small_low.xml" value="0.367" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/ic_temp.xml" value="0.38229166666666664" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/drawable/selector_tab.xml" value="0.38229166666666664" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_address.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_address_register.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_address_search.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_address_setting.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_home.xml" value="0.5" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_intro.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_menu.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_product.xml" value="0.5" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_select_store.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/activity_store_detail.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/bg_white_top_round_10.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/bottom_sheet_dialog_address.xml" value="0.25" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/bottom_sheet_dialog_address2.xml" value="0.3229018492176387" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/bottom_sheet_minimum_amount.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/cell_address.xml" value="0.67" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/cell_advertisement.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/cell_location.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/cell_neighorhood_delivery.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/cell_select_one.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/custom_add_view.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/custom_advertisement_view.xml" value="0.33" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/custom_edit_text.xml" value="0.7617224880382775" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/databinding_variable.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/fragment_address_regist.xml" value="0.22" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/fragment_address_register.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/fragment_address_search.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/fragment_address_setting.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/BaeminClone/app/src/main/res/layout/fragment_delivery.xml" value="0.36614583333333334" />
+        <entry key="app/src/main/res/drawable/bg_white_top_round_10.xml" value="0.298" />
+        <entry key="app/src/main/res/drawable/bg_white_top_round_13.xml" value="0.2205" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.24909420289855072" />
+        <entry key="app/src/main/res/layout/bottom_sheet_dialog_address.xml" value="0.1955420466058764" />
+        <entry key="app/src/main/res/layout/bottom_sheet_minimum_amount.xml" value="0.3197463768115942" />
+        <entry key="app/src/main/res/layout/cell_address.xml" value="0.55" />
+        <entry key="app/src/main/res/layout/cell_advertisement.xml" value="0.1955420466058764" />
+        <entry key="app/src/main/res/layout/cell_location.xml" value="0.3197463768115942" />
+        <entry key="app/src/main/res/layout/cell_neighorhood_delivery.xml" value="0.3197463768115942" />
+        <entry key="app/src/main/res/layout/cell_select_one.xml" value="0.3197463768115942" />
+        <entry key="app/src/main/res/layout/fragment_delivery.xml" value="0.21666666666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="true" project-jdk-name="13" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -12,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/bm_hanna_air"
-        android:text="최소주문금액"
+        android:text="@string/minimum_amount"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,17 +34,17 @@
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="@color/gray_card_stroke"
-        app:layout_constraintBottom_toTopOf="@id/txtComplete"
+        app:layout_constraintBottom_toTopOf="@id/txtClose"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/txtComplete"
+        android:id="@+id/txtClose"
         android:layout_width="0dp"
         android:layout_height="47dp"
         android:fontFamily="@font/bm_hanna"
         android:gravity="center"
-        android:text="닫기"
+        android:text="@string/close"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

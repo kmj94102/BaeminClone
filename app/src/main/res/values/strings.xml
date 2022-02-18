@@ -50,6 +50,14 @@
     <string name="enter_detailed_alias">주소 별명 입력</string>
     <string name="check_location_on_map">지도에서 위치 확인</string>
 
+    <!-- 최소 주문 금액 -->
+    <string name="minimum_amount">최소주문금액</string>
+    <string name="less_then_5000">5,000원 이하</string>
+    <string name="less_then_10000">10,000원 이하</string>
+    <string name="less_then_12000">12,000원 이하</string>
+    <string name="less_then_15000">15,000원 이하</string>
+    <string name="less_then_20000">20,000원 이하</string>
+
     <!-- 공통 -->
     <string name="error_guide_message">오류가 발생하였습니다.</string>
     <string name="retry">다시 시도하기</string>
@@ -60,5 +68,7 @@
     <string name="company">회사</string>
     <string name="etc">기타</string>
     <string name="complete">완료</string>
+    <string name="all">전체</string>
+    <string name="close">닫기</string>
 
 </resources>

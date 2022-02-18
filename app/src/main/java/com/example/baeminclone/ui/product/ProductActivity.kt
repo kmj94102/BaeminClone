@@ -22,7 +22,12 @@ class ProductActivity : BaseActivity<ActivityProductBinding ,ProductViewModel>(R
         binding.radioGroup.setOnSelectedChangeListener {
             when(it) {
                 binding.radioMinimumAmount.id -> {
-                    BottomSheetMinimumAmount("5,000원 이하").show(supportFragmentManager, "")
+                    BottomSheetMinimumAmount(binding.radioMinimumAmount.text.toString()).apply {
+                        setClickListener { selectMinimum ->
+                            binding.radioMinimumAmount.text = selectMinimum
+                        }
+                        show(supportFragmentManager, "")
+                    }
                 }
             }
         }
