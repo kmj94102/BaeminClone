@@ -20,6 +20,7 @@ class BottomSheetMinimumAmount(private val initItem : String) : BottomSheetDialo
     private val binding : BottomSheetMinimumAmountBinding by lazy { BottomSheetMinimumAmountBinding.inflate(layoutInflater) }
     private var beforeSelectIdx = 0
     private var listener : ((String) -> Unit)? = null
+    private lateinit var list : List<SelectOne>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +30,8 @@ class BottomSheetMinimumAmount(private val initItem : String) : BottomSheetDialo
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        listSetting()
 
         list = list.mapIndexed { index, selectOne ->
             selectOne.isSelect.set(selectOne.text == initItem)
@@ -70,13 +73,15 @@ class BottomSheetMinimumAmount(private val initItem : String) : BottomSheetDialo
         this.listener = listener
     }
 
-    private var list = listOf(
-        SelectOne(getString(R.string.all), ObservableBoolean(true)),
-        SelectOne(getString(R.string.less_then_5000), ObservableBoolean(false)),
-        SelectOne(getString(R.string.less_then_10000), ObservableBoolean(false)),
-        SelectOne(getString(R.string.less_then_12000), ObservableBoolean(false)),
-        SelectOne(getString(R.string.less_then_15000), ObservableBoolean(false)),
-        SelectOne(getString(R.string.less_then_20000), ObservableBoolean(false)),
-    )
+    private fun listSetting() {
+        list = listOf(
+            SelectOne(getString(R.string.all), ObservableBoolean(true)),
+            SelectOne(getString(R.string.less_then_5000), ObservableBoolean(false)),
+            SelectOne(getString(R.string.less_then_10000), ObservableBoolean(false)),
+            SelectOne(getString(R.string.less_then_12000), ObservableBoolean(false)),
+            SelectOne(getString(R.string.less_then_15000), ObservableBoolean(false)),
+            SelectOne(getString(R.string.less_then_20000), ObservableBoolean(false)),
+        )
+    }
 
 }

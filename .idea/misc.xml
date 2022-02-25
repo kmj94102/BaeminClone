@@ -33,6 +33,8 @@
         <entry key="app/src/main/res/drawable/bg_white_top_round_10.xml" value="0.298" />
         <entry key="app/src/main/res/drawable/bg_white_top_round_13.xml" value="0.2205" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.24909420289855072" />
+        <entry key="app/src/main/res/layout/activity_product.xml" value="0.24909420289855072" />
+        <entry key="app/src/main/res/layout/activity_product_detail.xml" value="0.3197463768115942" />
         <entry key="app/src/main/res/layout/bottom_sheet_dialog_address.xml" value="0.1955420466058764" />
         <entry key="app/src/main/res/layout/bottom_sheet_minimum_amount.xml" value="0.3197463768115942" />
         <entry key="app/src/main/res/layout/cell_address.xml" value="0.55" />
